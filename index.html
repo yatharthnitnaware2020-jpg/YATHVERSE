@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YATHVERSE | Creative Marketplace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            YATH<span>VERSE</span>
+        </a>
+
+        <nav>
+    <a href="#home">Home</a>
+    <a href="#explore">Explore</a>
+    <a href="#categories">Categories</a>
+    <a href="#creators">Creators</a>
+    <a href="dashboard.html">Dashboard</a>
+
+</nav>
+
+<div class="nav-buttons">
+    <button class="login-btn"
+        onclick="window.location.href='login.html?mode=login'">
+        Login
+    </button>
+
+    <button class="signup-btn"
+        onclick="window.location.href='login.html?mode=signup'">
+        Join Now
+    </button>
+</div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tag">THE CREATIVE MARKETPLACE</p>
+
+            <h1>
+                Where Creativity<br>
+                Meets <span>Opportunity.</span>
+            </h1>
+
+            <p class="description">
+                Discover unique designs, connect with talented creators
+                and bring your creative ideas to life.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="exploreDesigns()">
+                    Explore Designs
+                </button>
+
+                <button class="secondary-btn"
+                    onclick="document.getElementById('creators').scrollIntoView({behavior:'smooth'})">
+                    Become a Creator
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+        <div class="hero-visual">
+
+            <div class="glow"></div>
+
+            <div class="visual-card card-one">
+                ✦ CREATIVE
+            </div>
+
+            <div class="visual-card card-two">
+                DESIGN ✧
+            </div>
+
+            <div class="visual-center">
+                Y
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRUST SECTION -->
+    <section class="trust">
+
+        <div>
+            <h2>100%</h2>
+            <p>Creative Freedom</p>
+        </div>
+
+        <div>
+            <h2>Global</h2>
+            <p>Creative Community</p>
+        </div>
+
+        <div>
+            <h2>One</h2>
+            <p>Creative Universe</p>
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories" id="categories">
+
+        <div class="category-heading">
+
+            <p class="tag">EXPLORE YOUR INTEREST</p>
+
+            <h2>Browse Categories</h2>
+
+            <p>Find the perfect design for your next project.</p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <button class="category-card active"
+                onclick="filterCategory('all', this)">
+                <span>✦</span>
+                <h3>All Designs</h3>
+            </button>
+
+            <button class="category-card"
+                onclick="filterCategory('thumbnail', this)">
+                <span>▣</span>
+                <h3>Thumbnails</h3>
+            </button>
+
+            <button class="category-card"
+                onclick="filterCategory('logo', this)">
+                <span>◈</span>
+                <h3>Logos</h3>
+            </button>
+
+            <button class="category-card"
+                onclick="filterCategory('social', this)">
+                <span>▤</span>
+                <h3>Social Media</h3>
+            </button>
+
+            <button class="category-card"
+                onclick="filterCategory('gaming', this)">
+                <span>🎮</span>
+                <h3>Gaming Graphics</h3>
+            </button>
+
+            <button class="category-card"
+                onclick="filterCategory('business', this)">
+                <span>◆</span>
+                <h3>Business</h3>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE DESIGNS -->
+    <section class="explore" id="explore">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="tag">DISCOVER SOMETHING NEW</p>
+                <h2>Explore Designs</h2>
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search designs..."
+                oninput="searchDesigns()"
+            >
+
+        </div>
+
+
+        <div class="design-grid" id="designGrid">
+
+
+            <!-- THUMBNAIL -->
+            <div class="design-card" data-category="thumbnail">
+
+                <div class="design-image image-one">
+                    <span>01</span>
+                </div>
+
+                <h3>Modern Thumbnail Pack</h3>
+                <p>By Creative Studio</p>
+                <h4>₹299</h4>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA -->
+            <div class="design-card" data-category="social">
+
+                <div class="design-image image-two">
+                    <span>02</span>
+                </div>
+
+                <h3>Social Media Templates</h3>
+                <p>By Pixel Creator</p>
+                <h4>₹199</h4>
+
+            </div>
+
+
+            <!-- LOGO -->
+            <div class="design-card" data-category="logo">
+
+                <div class="design-image image-three">
+                    <span>03</span>
+                </div>
+
+                <h3>Premium Logo Bundle</h3>
+                <p>By Design House</p>
+                <h4>₹499</h4>
+
+            </div>
+
+
+            <!-- GAMING -->
+            <div class="design-card" data-category="gaming">
+
+                <div class="design-image image-four">
+                    <span>04</span>
+                </div>
+
+                <h3>Gaming Stream Pack</h3>
+                <p>By Game Creator</p>
+                <h4>₹349</h4>
+
+            </div>
+
+
+            <!-- BUSINESS -->
+            <div class="design-card" data-category="business">
+
+                <div class="design-image image-five">
+                    <span>05</span>
+                </div>
+
+                <h3>Business Presentation Kit</h3>
+                <p>By Creative Works</p>
+                <h4>₹399</h4>
+
+            </div>
+
+
+        </div>
+
+
+        <p id="noResults" class="no-results">
+            No designs found. Try another search.
+        </p>
+
+    </section>
+
+
+    <!-- CREATOR SECTION -->
+    <section class="creator-section" id="creators">
+
+        <p class="tag">YOUR CREATIVITY HAS VALUE</p>
+
+        <h2>
+            Turn Your Creativity<br>
+            Into Opportunity.
+        </h2>
+
+        <p>
+            Join a community where creators can showcase their talent
+            and reach new customers.
+        </p>
+
+        <button>Start Creating</button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            YATH<span>VERSE</span>
+        </div>
+
+        <p>Built on Trust. Driven by Creativity.</p>
+
+        <p class="copyright">
+            © 2026 YATHVERSE. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
